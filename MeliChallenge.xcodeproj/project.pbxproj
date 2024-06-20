@@ -215,6 +215,18 @@
 			path = ProductList;
 			sourceTree = "<group>";
 		};
+		C029859D2C24F4F30067EB21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C029859B2C24EF130067EB21 /* UIImageView+Extension.swift */,
+				C02985992C24EEF50067EB21 /* UILabel+Extensions.swift */,
+				C02985972C24EED70067EB21 /* String+Extensions.swift */,
+				C029858F2C24EE070067EB21 /* Bool+Extensions.swift */,
+				C092B68B2C20DD9400FF40B3 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C03A978F2C1F5ED600766A9F = {
 			isa = PBXGroup;
 			children = (
@@ -296,16 +308,12 @@
 		C03A97DF2C1F814300766A9F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C029859B2C24EF130067EB21 /* UIImageView+Extension.swift */,
-				C02985992C24EEF50067EB21 /* UILabel+Extensions.swift */,
-				C02985972C24EED70067EB21 /* String+Extensions.swift */,
-				C029858F2C24EE070067EB21 /* Bool+Extensions.swift */,
+				C029859D2C24F4F30067EB21 /* Extensions */,
 				C03A97F42C1F978400766A9F /* ViewCode */,
 				C03A97EC2C1F8A9400766A9F /* CascadeOperator.swift */,
 				C03A97F22C1F953100766A9F /* ViewCodeContract.swift */,
 				C03A98032C1F9A0A00766A9F /* ActionTypealias.swift */,
 				C03A980A2C1FDD2600766A9F /* Weakify.swift */,
-				C092B68B2C20DD9400FF40B3 /* UIView+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
