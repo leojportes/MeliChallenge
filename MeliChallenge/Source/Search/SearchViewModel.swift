@@ -13,7 +13,7 @@ protocol SearchViewModelProtocol: AnyObject {
 
 final class SearchViewModel: SearchViewModelProtocol {
     // MARK: - Properties
-    private var coordinator: SearchCoordinator?
+    private(set) var coordinator: SearchCoordinator?
 
     // MARK: - Init
     init(coordinator: SearchCoordinator?) {
