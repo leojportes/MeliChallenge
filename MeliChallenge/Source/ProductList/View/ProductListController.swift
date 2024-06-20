@@ -9,18 +9,19 @@ import UIKit
 
 final class ProductListController: CoordinatedViewController {
     // MARK: - Dependencies
-    private let searchText: String
-    private let viewModel: ProductListViewModelProtocol
+    private var searchText: String
+    private let viewModel: ProductListViewModel
+    private var currentPage: Int = 0
 
     private lazy var rootView = ProductListView(
-        onSearch: {
-            _ in
+        loadNextPage: weakify { weakSelf in
+            weakSelf.fetchProductList(weakSelf.searchText, isFirstPage: false)
         }
     )
 
     // MARK: - Init
     init(
-        viewModel: ProductListViewModelProtocol,
+        viewModel: ProductListViewModel,
         coordinator: CoordinatorProtocol,
         searchText: String
     ) {
@@ -32,6 +33,7 @@ final class ProductListController: CoordinatedViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchProductList(searchText)
     }
 
     override func loadView() {
@@ -67,6 +69,19 @@ final class ProductListController: CoordinatedViewController {
     }
 
     // MARK: - Private methods
+    private func fetchProductList(_ searchText: String, isFirstPage: Bool = true) {
+        viewModel.fetchProductList(searchText, currentPage: currentPage) { result in
+            DispatchQueue.main.async {
+                self.rootView.tableView.tableFooterView = nil
+                self.rootView.products += result.results
+                self.rootView.numberOfResults = result.paging.total
+                self.rootView.fetchMore = false
+                self.currentPage += 10
+                return
+            }
+        }
+    }
+
     private func setupNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -94,8 +109,14 @@ final class ProductListController: CoordinatedViewController {
 extension ProductListController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        if let text = textField.text, !text.isEmpty {
-            print(text)
+        if let newSearchText = textField.text, !newSearchText.isEmpty {
+            searchText = newSearchText
+            currentPage = 0
+            rootView.products.removeAll()
+            rootView.tableView.reloadData()
+            rootView.spinningCircleView.animate()
+            rootView.spinningCircleView.isHidden = false
+            fetchProductList(newSearchText, isFirstPage: false)
         }
         return true
     }
