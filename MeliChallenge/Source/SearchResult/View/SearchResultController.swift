@@ -1,5 +1,5 @@
 //
-//  ProductListController.swift
+//  SearchResultController.swift
 //  MeliChallenge
 //
 //  Created by Leonardo Portes on 17/06/24.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class ProductListController: CoordinatedViewController {
+final class SearchResultController: CoordinatedViewController {
     // MARK: - Dependencies
     private var searchText: String
-    private let viewModel: ProductListViewModel
+    private let viewModel: SearchResultViewModel
     private var currentPage: Int = 0
 
-    private lazy var rootView = ProductListView(
+    private lazy var rootView = SearchResultView(
         loadNextPage: weakify { weakSelf in
             weakSelf.fetchProductList(weakSelf.searchText, isFirstPage: false)
         }
@@ -21,7 +21,7 @@ final class ProductListController: CoordinatedViewController {
 
     // MARK: - Init
     init(
-        viewModel: ProductListViewModel,
+        viewModel: SearchResultViewModel,
         coordinator: CoordinatorProtocol,
         searchText: String
     ) {
@@ -106,7 +106,7 @@ final class ProductListController: CoordinatedViewController {
 }
 
 // MARK: - Extension UITextField delegate
-extension ProductListController: UITextFieldDelegate {
+extension SearchResultController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if let newSearchText = textField.text, !newSearchText.isEmpty {

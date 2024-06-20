@@ -1,5 +1,5 @@
 //
-//  ProductListViewModel.swift
+//  SearchResultViewModel.swift
 //  MeliChallenge
 //
 //  Created by Leonardo Portes on 17/06/24.
@@ -7,17 +7,17 @@
 
 import Foundation
 
-protocol ProductListViewModelProtocol: AnyObject {
+protocol SearchResultViewModelProtocol: AnyObject {
     func fetchProductList(_ searchText: String, currentPage: Int, completion: @escaping (ProductListResponse) -> Void)
 }
 
-final class ProductListViewModel: ProductListViewModelProtocol {
+final class SearchResultViewModel: SearchResultViewModelProtocol {
     // MARK: - Dependencies
-    private var coordinator: ProductListCoordinator?
+    private var coordinator: SearchResultCoordinator?
     private let service: SearchService
 
     // MARK: - Init
-    init(service: SearchService = .init(), coordinator: ProductListCoordinator?) {
+    init(service: SearchService = .init(), coordinator: SearchResultCoordinator?) {
         self.coordinator = coordinator
         self.service = service
     }

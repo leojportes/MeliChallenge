@@ -18,7 +18,7 @@ final class SearchCoordinator: BaseCoordinator {
     }
 
     func navigateToProductList(searchText: String) {
-        let coordinator = ProductListCoordinator(with: configuration)
+        let coordinator = SearchResultCoordinator(with: configuration)
         coordinator.start(searchText: searchText)
     }
 }

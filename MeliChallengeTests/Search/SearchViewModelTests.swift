@@ -24,11 +24,11 @@ final class SearchViewModelTests: XCTestCase {
         sut = nil
     }
 
-    func test_searchViewModel_whenNavigateToProductList_thenShouldHaveCorrectController() throws {
+    func test_searchViewModel_whenNavigateToSearchResult_thenShouldHaveCorrectController() throws {
         // When
         sut.navigateToProductList("")
 
         let currentController = sut.coordinator?.configuration.navigationController?.viewControllers.last
-        XCTAssertTrue(currentController is ProductListController)
+        XCTAssertTrue(currentController is SearchResultController)
     }
 }

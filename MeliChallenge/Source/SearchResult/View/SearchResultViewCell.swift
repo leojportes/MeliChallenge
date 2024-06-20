@@ -1,5 +1,5 @@
 //
-//  ProductTableViewCell.swift
+//  SearchResultViewCell.swift
 //  MeliChallenge
 //
 //  Created by Leonardo Portes on 18/06/24.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class ProductTableViewCell: UITableViewCell, ViewCodeContract {
+final class SearchResultViewCell: UITableViewCell, ViewCodeContract {
     // MARK: - Static properties
-    static let identifier = "ProductTableViewCell"
+    static let identifier = "SearchResultViewCell"
 
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

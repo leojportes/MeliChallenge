@@ -1,5 +1,5 @@
 //
-//  ProductListView.swift
+//  SearchResultView.swift
 //  MeliChallenge
 //
 //  Created by Leonardo Portes on 17/06/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProductListView: MLView {
+final class SearchResultView: MLView {
     // MARK: - Dependencies
     private let loadNextPage: () -> Void
 
@@ -72,7 +72,7 @@ final class ProductListView: MLView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.rowHeight = UITableView.automaticDimension
         $0.estimatedRowHeight = 500
-        $0.register(ProductTableViewCell.self, forCellReuseIdentifier: ProductTableViewCell.identifier)
+        $0.register(SearchResultViewCell.self, forCellReuseIdentifier: SearchResultViewCell.identifier)
         //        $0.register(ErrorTableViewCell.self, forCellReuseIdentifier: ErrorTableViewCell.identifier)
         $0.separatorStyle = .singleLine
         $0.showsVerticalScrollIndicator = true
@@ -85,7 +85,7 @@ final class ProductListView: MLView {
 }
 
 // MARK: - Extension View Code Contract
-extension ProductListView: ViewCodeContract {
+extension SearchResultView: ViewCodeContract {
     func setupHierarchy() {
         addSubview(headerView)
         headerView.addSubview(numberOfResultsView)
@@ -140,36 +140,16 @@ extension ProductListView: ViewCodeContract {
 }
 
 // MARK: - Extension UITableViewDelegate & UITableViewDataSource.
-extension ProductListView: UITableViewDelegate, UITableViewDataSource {
+extension SearchResultView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if procedures.isEmpty { return 1 }
         products.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if procedures.isEmpty{
-//            let cellEmpty = tableview.dequeueReusableCell(withIdentifier: ErrorTableViewCell.identifier, for: indexPath) as? ErrorTableViewCell
-//            cellEmpty?.isUserInteractionEnabled = false
-//            return cellEmpty ?? UITableViewCell()
-//        } else {
-//            let cell = tableview.dequeueReusableCell(withIdentifier: ProcedureTableViewCell.identifier, for: indexPath) as? ProcedureTableViewCell
-//            let procedure = procedures[indexPath.row]
-//            let amounts = Current.shared.formatterAmounts(amounts: procedures)
-//            let amount = amounts[indexPath.row]
-//
-//            cell?.setupCustomCell(
-//                title: procedure.nameClient,
-//                procedure: procedure.typeProcedure,
-//                price: "\(amount)",
-//                paymentMethod: "\(procedure.currentDate) • \(procedure.formPayment.rawValue)"
-//            )
-//            cell?.setPaymentIcon(method: procedure.formPayment)
-//            return cell ?? UITableViewCell()
-//        }
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: ProductTableViewCell.identifier,
+            withIdentifier: SearchResultViewCell.identifier,
             for: indexPath
-        ) as? ProductTableViewCell else {
+        ) as? SearchResultViewCell else {
             return .init()
         }
         let product = products[indexPath.row]
