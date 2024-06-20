@@ -11,7 +11,9 @@ final class SearchView: MLView {
     private var onSearch: ((String) -> Void)
 
     // MARK: - Init
-    init(onSearch: @escaping (String) -> Void) {
+    init(
+        onSearch: @escaping (String) -> Void
+    ) {
         self.onSearch = onSearch
         super.init()
         setupView()
@@ -39,7 +41,7 @@ final class SearchView: MLView {
         $0.image = UIImage(named: "meli-logo")
     }
 
-    private lazy var searchTextField = MLSearchTextField(
+    private(set) lazy var searchTextField = MLSearchTextField(
         placeholder: "Buscar no Mercado Livre"
     ) .. {
         $0.delegate = self

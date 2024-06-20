@@ -8,7 +8,6 @@
 import Foundation
 
 protocol SearchViewModelProtocol: AnyObject {
-    // func fetchUser(completion: @escaping (UserModelList) -> Void)
     func navigateToProductList(_ searchText: String)
 }
 

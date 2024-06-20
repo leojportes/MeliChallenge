@@ -9,6 +9,7 @@ import UIKit
 
 final class SearchViewController: CoordinatedViewController {
     private let viewModel: SearchViewModelProtocol
+
     private lazy var rootView = SearchView(
         onSearch: weakify {
             $0.viewModel.navigateToProductList($1)
@@ -24,9 +25,14 @@ final class SearchViewController: CoordinatedViewController {
         view = rootView
     }
 
-    init(viewModel: SearchViewModelProtocol, coordinator: CoordinatorProtocol){
+    init(viewModel: SearchViewModelProtocol, coordinator: CoordinatorProtocol) {
         self.viewModel = viewModel
         super.init(coordinator: coordinator)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        rootView.searchTextField.text = nil
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,23 +44,3 @@ final class SearchViewController: CoordinatedViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-class MNLabel: UILabel {
-
-    init(
-        text: String = "",
-        font: UIFont = UIFont.boldSystemFont(ofSize: 17),
-        textColor: UIColor = .gray
-    ) {
-        super.init(frame: .zero)
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.font = font
-        self.text = text
-        self.textColor = textColor
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
