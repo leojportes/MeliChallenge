@@ -105,3 +105,24 @@ extension UIView {
         return self.viewWidthAnchor
     }
 }
+
+extension UIView {
+    func displaySpinerFooter() -> UIView {
+        let footer = UIView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: self.frame.size.width,
+                height: 50
+            )
+        )
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footer.center
+        footer.addSubview(spinner)
+        spinner.topAnchor(in: footer, padding: 10)
+        spinner.startAnimating()
+        spinner.style = .large
+        spinner.color = .darkGray
+        return footer
+    }
+}
