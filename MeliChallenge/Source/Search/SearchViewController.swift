@@ -12,7 +12,7 @@ final class SearchViewController: CoordinatedViewController {
 
     private lazy var rootView = SearchView(
         onSearch: weakify {
-            $0.viewModel.navigateToProductList($1)
+            $0.viewModel.navigateToSearchResult($1)
         }
     )
 

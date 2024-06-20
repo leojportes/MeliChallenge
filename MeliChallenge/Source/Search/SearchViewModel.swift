@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchViewModelProtocol: AnyObject {
-    func navigateToProductList(_ searchText: String)
+    func navigateToSearchResult(_ searchText: String)
 }
 
 final class SearchViewModel: SearchViewModelProtocol {
@@ -21,7 +21,7 @@ final class SearchViewModel: SearchViewModelProtocol {
     }
 
     // MARK: - Routes
-    func navigateToProductList(_ searchText: String) {
-        coordinator?.navigateToProductList(searchText: searchText)
+    func navigateToSearchResult(_ searchText: String) {
+        coordinator?.navigateToSearchResult(searchText: searchText)
     }
 }

@@ -26,7 +26,7 @@ final class SearchViewModelTests: XCTestCase {
 
     func test_searchViewModel_whenNavigateToSearchResult_thenShouldHaveCorrectController() throws {
         // When
-        sut.navigateToProductList("")
+        sut.navigateToSearchResult("")
 
         let currentController = sut.coordinator?.configuration.navigationController?.viewControllers.last
         XCTAssertTrue(currentController is SearchResultController)

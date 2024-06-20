@@ -17,7 +17,7 @@ final class SearchCoordinator: BaseCoordinator {
         configuration.navigationController?.pushViewController(controller, animated: true)
     }
 
-    func navigateToProductList(searchText: String) {
+    func navigateToSearchResult(searchText: String) {
         let coordinator = SearchResultCoordinator(with: configuration)
         coordinator.start(searchText: searchText)
     }
