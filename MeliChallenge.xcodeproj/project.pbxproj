@@ -25,6 +25,7 @@
 		C02985982C24EED70067EB21 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02985972C24EED70067EB21 /* String+Extensions.swift */; };
 		C029859A2C24EEF50067EB21 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02985992C24EEF50067EB21 /* UILabel+Extensions.swift */; };
 		C029859C2C24EF130067EB21 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029859B2C24EF130067EB21 /* UIImageView+Extension.swift */; };
+		C02985A02C24F52A0067EB21 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029859E2C24F52A0067EB21 /* SearchViewModelTests.swift */; };
 		C03A979C2C1F5ED600766A9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A979B2C1F5ED600766A9F /* AppDelegate.swift */; };
 		C03A979E2C1F5ED600766A9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A979D2C1F5ED600766A9F /* SceneDelegate.swift */; };
 		C03A97A02C1F5ED600766A9F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A979F2C1F5ED600766A9F /* SearchViewController.swift */; };
@@ -91,6 +92,7 @@
 		C02985972C24EED70067EB21 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		C02985992C24EEF50067EB21 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		C029859B2C24EF130067EB21 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		C029859E2C24F52A0067EB21 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		C03A97982C1F5ED600766A9F /* MeliChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03A979B2C1F5ED600766A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C03A979D2C1F5ED600766A9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +229,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C029859F2C24F52A0067EB21 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C029859E2C24F52A0067EB21 /* SearchViewModelTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		C03A978F2C1F5ED600766A9F = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +269,7 @@
 		C03A97B12C1F5ED700766A9F /* MeliChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				C029859F2C24F52A0067EB21 /* Search */,
 			);
 			path = MeliChallengeTests;
 			sourceTree = "<group>";
@@ -545,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02985A02C24F52A0067EB21 /* SearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
