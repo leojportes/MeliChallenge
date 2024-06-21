@@ -33,6 +33,7 @@ final class SearchResultController: CoordinatedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchProductList(searchText)
+        setupNavigationBar()
     }
 
     override func loadView() {
@@ -43,21 +44,11 @@ final class SearchResultController: CoordinatedViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigationBar()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
     }
 
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    // MARK: - View
-    private lazy var titleView = UIView() .. {
-        $0.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private lazy var searchTextField = MLSearchTextField(
@@ -70,12 +61,13 @@ final class SearchResultController: CoordinatedViewController {
     // MARK: - Private methods
     private func fetchProductList(_ searchText: String, isFirstPage: Bool = true) {
         viewModel.fetchProductList(searchText, currentPage: currentPage) { result in
-            DispatchQueue.main.async {
-                self.rootView.tableView.tableFooterView = nil
-                self.rootView.products += result.results
-                self.rootView.numberOfResults = result.paging.total
-                self.rootView.fetchMore = false
-                self.currentPage += 10
+            DispatchQueue.main.async { [weak self] in
+                self?.rootView.tableView.tableFooterView = nil
+                self?.rootView.products += result.results
+                self?.rootView.numberOfResults = result.paging.total
+                self?.rootView.fetchMore = false
+                self?.currentPage += 10
+                self?.rootView.emptyView.isHidden = self?.rootView.products.count ?? 0 > 0
                 return
             }
         }
@@ -86,6 +78,7 @@ final class SearchResultController: CoordinatedViewController {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .systemYellow
         appearance.shadowColor = .clear
+        navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.tintColor = .darkGray
@@ -94,6 +87,7 @@ final class SearchResultController: CoordinatedViewController {
     }
 
     private func setupSearchTextField() {
+        let titleView = MLView()
         navigationItem.titleView = titleView
         titleView.addSubview(searchTextField)
         searchTextField

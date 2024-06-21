@@ -17,6 +17,7 @@ final class SearchResultView: MLView {
     var products: [Product] = [] {
         didSet {
             spinningCircleView.isHidden = true
+            tableView.isHidden = products.count == 0
             tableView.reloadData()
         }
     }
@@ -71,6 +72,13 @@ final class SearchResultView: MLView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
 
+    private(set) lazy var emptyView = MLEmptyStateView(
+        title: "Não encontramos anúncios",
+        message: "Verifique se a palavra está escrita corretamente."
+    ) .. {
+        $0.isHidden = true
+    }
+
     private(set) lazy var tableView = UITableView() .. {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.rowHeight = UITableView.automaticDimension
@@ -94,6 +102,7 @@ extension SearchResultView: ViewCodeContract {
         headerView.addSubview(numberOfResultLabel)
         addSubview(tableView)
         addSubview(spinningCircleView)
+        addSubview(emptyView)
     }
 
     func setupConstraints() {
@@ -130,6 +139,12 @@ extension SearchResultView: ViewCodeContract {
             .center(in: self)
             .heightAnchor(100)
             .widthAnchor(100)
+
+        emptyView
+            .topAnchor(in: headerView, attribute: .bottom, layoutOption: .none)
+            .leftAnchor(in: self, layoutOption: .none)
+            .rightAnchor(in: self, layoutOption: .none)
+            .bottomAnchor(in: self, layoutOption: .useMargins)
     }
 
     func setupConfiguration() {
@@ -163,7 +178,6 @@ extension SearchResultView: UITableViewDelegate, UITableViewDataSource {
         return openProductDetails(product)
     }
 
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         180
     }
@@ -175,6 +189,7 @@ extension SearchResultView: UITableViewDelegate, UITableViewDataSource {
         if position > tableHeight - 100 - scrollViewHeight {
             if fetchMore.not && products.isEmpty.not {
                 tableView.tableFooterView = self.displaySpinerFooter()
+                emptyView.isHidden = true
                 fetchMore = true
                 loadNextPage()
                 return

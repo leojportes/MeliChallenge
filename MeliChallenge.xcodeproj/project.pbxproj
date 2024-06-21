@@ -63,6 +63,7 @@
 		C08F34632C25367E00382667 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F34622C25367E00382667 /* ProductDetailsView.swift */; };
 		C08F34652C25370900382667 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F34642C25370900382667 /* ProductDetailsViewController.swift */; };
 		C08F34672C25378B00382667 /* ProductDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F34662C25378B00382667 /* ProductDetailsCoordinator.swift */; };
+		C08F34692C2548FD00382667 /* MLEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F34682C2548FD00382667 /* MLEmptyStateView.swift */; };
 		C092B68C2C20DD9400FF40B3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092B68B2C20DD9400FF40B3 /* UIView+Extensions.swift */; };
 		C092B68E2C20DDE900FF40B3 /* MLSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092B68D2C20DDE900FF40B3 /* MLSearchTextField.swift */; };
 /* End PBXBuildFile section */
@@ -144,6 +145,7 @@
 		C08F34622C25367E00382667 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		C08F34642C25370900382667 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		C08F34662C25378B00382667 /* ProductDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCoordinator.swift; sourceTree = "<group>"; };
+		C08F34682C2548FD00382667 /* MLEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLEmptyStateView.swift; sourceTree = "<group>"; };
 		C092B68B2C20DD9400FF40B3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C092B68D2C20DDE900FF40B3 /* MLSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -418,6 +420,7 @@
 				C02985912C24EE900067EB21 /* MLLabel.swift */,
 				C02985932C24EE970067EB21 /* MLSpinningCircleView.swift */,
 				C02985952C24EE9F0067EB21 /* MLBadge.swift */,
+				C08F34682C2548FD00382667 /* MLEmptyStateView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				C03A98002C1F999900766A9F /* UIView+RawAnchors.swift in Sources */,
 				C03A97EA2C1F853800766A9F /* BaseCoordinator.swift in Sources */,
 				C02985902C24EE070067EB21 /* Bool+Extensions.swift in Sources */,
+				C08F34692C2548FD00382667 /* MLEmptyStateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
