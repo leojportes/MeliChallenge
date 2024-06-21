@@ -28,6 +28,7 @@ final class SearchViewModelTests: XCTestCase {
         // When
         sut.navigateToSearchResult("")
 
+        // Then
         let currentController = sut.coordinator?.configuration.navigationController?.viewControllers.last
         XCTAssertTrue(currentController is SearchResultController)
     }

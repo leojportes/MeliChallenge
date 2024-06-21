@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Paging: Codable {
+struct Paging: Codable, Equatable {
     let total: Int
     let offset: Int
     let limit: Int
     let primaryResults: Int
 }
 
-struct ProductListResponse: Codable {
+struct ProductListResponse: Codable, Equatable {
     let siteId: String
     let query: String
     let paging: Paging

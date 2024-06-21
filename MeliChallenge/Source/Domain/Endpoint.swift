@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Endpoint {
+class Endpoint {
     let path: String
     let method: HTTPMethod = .get
     let query: [URLQueryItem]
