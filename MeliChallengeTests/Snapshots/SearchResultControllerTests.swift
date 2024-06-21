@@ -21,7 +21,7 @@ class SearchResultControllerTests: XCTestCase {
             .stub(),
         ]
         sut.rootView.numberOfResults = 1345
-        assertSnapshot(of: sut, as: .image, record: true)
+        assertSnapshot(of: sut, as: .image, record: false)
     }
 }
 
