@@ -8,7 +8,11 @@
 import Foundation
 import OSLog
 
-final class ApiClient {
+protocol APIClientProtocol {
+    func fetch<T: Codable>(model: T.Type, request: Endpoint, completion: @escaping (Result<T, Error>) -> Void)
+}
+
+final class ApiClient: APIClientProtocol {
     private let logger = Logger(subsystem: "leojportes.MeliChallenge", category: "ApiClient")
     private let session: URLSession
 

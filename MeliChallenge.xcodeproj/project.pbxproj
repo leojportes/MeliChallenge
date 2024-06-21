@@ -30,6 +30,7 @@
 		C02988762C24FDFE0067EB21 /* ApliClientTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02988752C24FDFE0067EB21 /* ApliClientTests+Extensions.swift */; };
 		C029887A2C2510E30067EB21 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02988792C2510E30067EB21 /* MockURLSession.swift */; };
 		C029887C2C25112D0067EB21 /* ProductListResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029887B2C25112D0067EB21 /* ProductListResponse+Stub.swift */; };
+		C029887F2C251CE50067EB21 /* EndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029887E2C251CE50067EB21 /* EndpointsTests.swift */; };
 		C03A979C2C1F5ED600766A9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A979B2C1F5ED600766A9F /* AppDelegate.swift */; };
 		C03A979E2C1F5ED600766A9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A979D2C1F5ED600766A9F /* SceneDelegate.swift */; };
 		C03A97A02C1F5ED600766A9F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A979F2C1F5ED600766A9F /* SearchViewController.swift */; };
@@ -101,6 +102,7 @@
 		C02988752C24FDFE0067EB21 /* ApliClientTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApliClientTests+Extensions.swift"; sourceTree = "<group>"; };
 		C02988792C2510E30067EB21 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		C029887B2C25112D0067EB21 /* ProductListResponse+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductListResponse+Stub.swift"; sourceTree = "<group>"; };
+		C029887E2C251CE50067EB21 /* EndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsTests.swift; sourceTree = "<group>"; };
 		C03A97982C1F5ED600766A9F /* MeliChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03A979B2C1F5ED600766A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C03A979D2C1F5ED600766A9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -255,12 +257,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		C029887D2C2515160067EB21 /* APIClient */ = {
+		C029887D2C2515160067EB21 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				C02985A22C24F9E00067EB21 /* APIClientTests.swift */,
+				C029887E2C251CE50067EB21 /* EndpointsTests.swift */,
 			);
-			path = APIClient;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		C03A978F2C1F5ED600766A9F = {
@@ -296,7 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				C02988742C24FDEC0067EB21 /* Helpers */,
-				C029887D2C2515160067EB21 /* APIClient */,
+				C029887D2C2515160067EB21 /* Domain */,
 				C029859F2C24F52A0067EB21 /* Search */,
 			);
 			path = MeliChallengeTests;
@@ -588,6 +591,7 @@
 				C02988762C24FDFE0067EB21 /* ApliClientTests+Extensions.swift in Sources */,
 				C02985A02C24F52A0067EB21 /* SearchViewModelTests.swift in Sources */,
 				C02985A32C24F9E00067EB21 /* APIClientTests.swift in Sources */,
+				C029887F2C251CE50067EB21 /* EndpointsTests.swift in Sources */,
 				C029887A2C2510E30067EB21 /* MockURLSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
