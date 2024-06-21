@@ -14,9 +14,8 @@ final class SearchResultController: CoordinatedViewController {
     private var currentPage: Int = 0
 
     private(set) lazy var rootView = SearchResultView(
-        loadNextPage: weakify { weakSelf in
-            weakSelf.fetchProductList(weakSelf.searchText, isFirstPage: false)
-        }
+        loadNextPage: weakify { $0.fetchProductList($0.searchText, isFirstPage: false) },
+        openProductDetails: weakify { $0.viewModel.openProductDetails(product: $1) }
     )
 
     // MARK: - Init
@@ -86,9 +85,11 @@ final class SearchResultController: CoordinatedViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .systemYellow
+        appearance.shadowColor = .clear
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.tintColor = .darkGray
+        navigationController?.navigationBar.shadowImage = nil
         setupSearchTextField()
     }
 

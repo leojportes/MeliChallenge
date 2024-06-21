@@ -10,6 +10,7 @@ import UIKit
 final class SearchResultView: MLView {
     // MARK: - Dependencies
     private let loadNextPage: () -> Void
+    private let openProductDetails: (Product) -> Void
 
     // MARK: - Properties
     var fetchMore: Bool = false
@@ -28,9 +29,11 @@ final class SearchResultView: MLView {
 
     // MARK: - Init
     init(
-        loadNextPage: @escaping () -> Void
+        loadNextPage: @escaping () -> Void,
+        openProductDetails: @escaping (Product) -> Void
     ) {
         self.loadNextPage = loadNextPage
+        self.openProductDetails = openProductDetails
         super.init()
         setupView()
     }
@@ -50,7 +53,7 @@ final class SearchResultView: MLView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    lazy var numberOfResultsView = UIView() .. {
+    private lazy var numberOfResultsView = UIView() .. {
         $0.backgroundColor = .white
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -73,11 +76,9 @@ final class SearchResultView: MLView {
         $0.rowHeight = UITableView.automaticDimension
         $0.estimatedRowHeight = 500
         $0.register(SearchResultViewCell.self, forCellReuseIdentifier: SearchResultViewCell.identifier)
-        //        $0.register(ErrorTableViewCell.self, forCellReuseIdentifier: ErrorTableViewCell.identifier)
         $0.separatorStyle = .singleLine
         $0.showsVerticalScrollIndicator = true
         $0.backgroundColor = .white
-        // table.loadingIndicatorView()
     }
 
     private(set) lazy var spinningCircleView = MLSpinningCircleView()
@@ -159,7 +160,7 @@ extension SearchResultView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let product = products[indexPath.row]
-        print(product)
+        return openProductDetails(product)
     }
 
 

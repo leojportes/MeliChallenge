@@ -60,6 +60,9 @@
 		C08F345B2C25200800382667 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = C08F345A2C25200800382667 /* SnapshotTesting */; };
 		C08F345E2C25204800382667 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F345D2C25204800382667 /* SearchViewControllerTests.swift */; };
 		C08F34602C2523DB00382667 /* SearchResultControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F345F2C2523DB00382667 /* SearchResultControllerTests.swift */; };
+		C08F34632C25367E00382667 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F34622C25367E00382667 /* ProductDetailsView.swift */; };
+		C08F34652C25370900382667 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F34642C25370900382667 /* ProductDetailsViewController.swift */; };
+		C08F34672C25378B00382667 /* ProductDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F34662C25378B00382667 /* ProductDetailsCoordinator.swift */; };
 		C092B68C2C20DD9400FF40B3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092B68B2C20DD9400FF40B3 /* UIView+Extensions.swift */; };
 		C092B68E2C20DDE900FF40B3 /* MLSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092B68D2C20DDE900FF40B3 /* MLSearchTextField.swift */; };
 /* End PBXBuildFile section */
@@ -138,6 +141,9 @@
 		C03A980A2C1FDD2600766A9F /* Weakify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weakify.swift; sourceTree = "<group>"; };
 		C08F345D2C25204800382667 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
 		C08F345F2C2523DB00382667 /* SearchResultControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultControllerTests.swift; sourceTree = "<group>"; };
+		C08F34622C25367E00382667 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		C08F34642C25370900382667 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		C08F34662C25378B00382667 /* ProductDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCoordinator.swift; sourceTree = "<group>"; };
 		C092B68B2C20DD9400FF40B3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C092B68D2C20DDE900FF40B3 /* MLSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -323,6 +329,7 @@
 		C03A97D62C1F644800766A9F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C08F34612C25366C00382667 /* ProductDetails */,
 				C02985862C24EDDC0067EB21 /* SearchResult */,
 				C02985752C24EDCC0067EB21 /* Domain */,
 				C03A97DA2C1F675C00766A9F /* Search */,
@@ -422,6 +429,16 @@
 				C08F345F2C2523DB00382667 /* SearchResultControllerTests.swift */,
 			);
 			path = Snapshots;
+			sourceTree = "<group>";
+		};
+		C08F34612C25366C00382667 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C08F34622C25367E00382667 /* ProductDetailsView.swift */,
+				C08F34642C25370900382667 /* ProductDetailsViewController.swift */,
+				C08F34662C25378B00382667 /* ProductDetailsCoordinator.swift */,
+			);
+			path = ProductDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,6 +582,7 @@
 				C03A97F82C1F97F500766A9F /* NSLayoutDimension.swift in Sources */,
 				C03A98042C1F9A0A00766A9F /* ActionTypealias.swift in Sources */,
 				C02985882C24EDDC0067EB21 /* ProductQueryRequest.swift in Sources */,
+				C08F34632C25367E00382667 /* ProductDetailsView.swift in Sources */,
 				C029858D2C24EDDC0067EB21 /* SearchResultViewCell.swift in Sources */,
 				C02985962C24EE9F0067EB21 /* MLBadge.swift in Sources */,
 				C03A97FC2C1F986A00766A9F /* UIView+AxisAttribute.swift in Sources */,
@@ -594,10 +612,12 @@
 				C02985942C24EE970067EB21 /* MLSpinningCircleView.swift in Sources */,
 				C03A97E62C1F84CF00766A9F /* CoordinatorConfiguration.swift in Sources */,
 				C03A97EF2C1F8BDE00766A9F /* SearchCoordinator.swift in Sources */,
+				C08F34652C25370900382667 /* ProductDetailsViewController.swift in Sources */,
 				C03A97FA2C1F983300766A9F /* AutoLayoutOption.swift in Sources */,
 				C03A97ED2C1F8A9400766A9F /* CascadeOperator.swift in Sources */,
 				C03A980B2C1FDD2600766A9F /* Weakify.swift in Sources */,
 				C029858E2C24EDDC0067EB21 /* SearchResultViewModel.swift in Sources */,
+				C08F34672C25378B00382667 /* ProductDetailsCoordinator.swift in Sources */,
 				C03A97E82C1F850F00766A9F /* Coordinator.swift in Sources */,
 				C03A98002C1F999900766A9F /* UIView+RawAnchors.swift in Sources */,
 				C03A97EA2C1F853800766A9F /* BaseCoordinator.swift in Sources */,

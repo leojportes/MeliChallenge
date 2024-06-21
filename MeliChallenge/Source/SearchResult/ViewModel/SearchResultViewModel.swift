@@ -39,4 +39,8 @@ final class SearchResultViewModel: SearchResultViewModelProtocol {
             }
         }
     }
+
+    func openProductDetails(product: Product) {
+        coordinator?.navigateToDetails(product: product)
+    }
 }
