@@ -13,7 +13,7 @@ final class SearchResultController: CoordinatedViewController {
     private let viewModel: SearchResultViewModel
     private var currentPage: Int = 0
 
-    private lazy var rootView = SearchResultView(
+    private(set) lazy var rootView = SearchResultView(
         loadNextPage: weakify { weakSelf in
             weakSelf.fetchProductList(weakSelf.searchText, isFirstPage: false)
         }

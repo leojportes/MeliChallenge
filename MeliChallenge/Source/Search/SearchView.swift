@@ -36,7 +36,7 @@ final class SearchView: MLView {
 
     private lazy var logoImageView = UIImageView() .. {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.contentMode = .scaleAspectFill
+        $0.contentMode = .scaleAspectFit
         $0.clipsToBounds = true
         $0.image = UIImage(named: "meli-logo")
     }
