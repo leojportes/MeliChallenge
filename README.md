@@ -64,6 +64,8 @@ Documentação disponível em: https://global-selling.mercadolibre.com/devsite/i
 
 * Utilização do RxSwift.
 
+* [Accessibility](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://developer.apple.com/accessibility/&ved=2ahUKEwipjdeKyu-GAxWYPbkGHQzhBREQFnoECAYQAQ&usg=AOvVaw0QP-Jlx1NbvYkE533pyd6Z)
+
 
 # Arquitetura
 
