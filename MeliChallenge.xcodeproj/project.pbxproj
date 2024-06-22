@@ -71,6 +71,10 @@
 		C08F3A4F2C2684B400382667 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F3A4E2C2684B400382667 /* URL+Extensions.swift */; };
 		C08F3A532C2697C700382667 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F3A522C2697C700382667 /* UIViewController+Extensions.swift */; };
 		C08F3A552C269C2F00382667 /* ProductDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F3A542C269C2F00382667 /* ProductDetailsViewControllerTests.swift */; };
+		C08F3A5F2C275E2B00382667 /* test_searchResultController_shouldReturnExpectedSnapshot.1.png in Resources */ = {isa = PBXBuildFile; fileRef = C08F3A582C275E2B00382667 /* test_searchResultController_shouldReturnExpectedSnapshot.1.png */; };
+		C08F3A602C275E2B00382667 /* test_searchResultController_whenEmptyState_shouldReturnExpectedSnapshot.1.png in Resources */ = {isa = PBXBuildFile; fileRef = C08F3A592C275E2B00382667 /* test_searchResultController_whenEmptyState_shouldReturnExpectedSnapshot.1.png */; };
+		C08F3A612C275E2B00382667 /* test_searchViewController_shouldReturnExpectedSnapshot.1.png in Resources */ = {isa = PBXBuildFile; fileRef = C08F3A5B2C275E2B00382667 /* test_searchViewController_shouldReturnExpectedSnapshot.1.png */; };
+		C08F3A632C275E6500382667 /* test_roductDetailsViewController_shouldReturnExpectedSnapshot.1.png in Resources */ = {isa = PBXBuildFile; fileRef = C08F3A622C275E6400382667 /* test_roductDetailsViewController_shouldReturnExpectedSnapshot.1.png */; };
 		C092B68C2C20DD9400FF40B3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092B68B2C20DD9400FF40B3 /* UIView+Extensions.swift */; };
 		C092B68E2C20DDE900FF40B3 /* MLSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092B68D2C20DDE900FF40B3 /* MLSearchTextField.swift */; };
 /* End PBXBuildFile section */
@@ -160,6 +164,10 @@
 		C08F3A4E2C2684B400382667 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		C08F3A522C2697C700382667 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C08F3A542C269C2F00382667 /* ProductDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		C08F3A582C275E2B00382667 /* test_searchResultController_shouldReturnExpectedSnapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_searchResultController_shouldReturnExpectedSnapshot.1.png; sourceTree = "<group>"; };
+		C08F3A592C275E2B00382667 /* test_searchResultController_whenEmptyState_shouldReturnExpectedSnapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_searchResultController_whenEmptyState_shouldReturnExpectedSnapshot.1.png; sourceTree = "<group>"; };
+		C08F3A5B2C275E2B00382667 /* test_searchViewController_shouldReturnExpectedSnapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_searchViewController_shouldReturnExpectedSnapshot.1.png; sourceTree = "<group>"; };
+		C08F3A622C275E6400382667 /* test_roductDetailsViewController_shouldReturnExpectedSnapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_roductDetailsViewController_shouldReturnExpectedSnapshot.1.png; sourceTree = "<group>"; };
 		C092B68B2C20DD9400FF40B3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C092B68D2C20DDE900FF40B3 /* MLSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -446,6 +454,7 @@
 		C08F345C2C25202E00382667 /* Snapshots */ = {
 			isa = PBXGroup;
 			children = (
+				C08F3A5D2C275E2B00382667 /* __Snapshots__ */,
 				C08F345D2C25204800382667 /* SearchViewControllerTests.swift */,
 				C08F345F2C2523DB00382667 /* SearchResultControllerTests.swift */,
 				C08F3A542C269C2F00382667 /* ProductDetailsViewControllerTests.swift */,
@@ -463,6 +472,41 @@
 				C08F3A4C2C26676D00382667 /* ProductDetailResponse.swift */,
 			);
 			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		C08F3A572C275E2B00382667 /* ProductDetailsViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C08F3A622C275E6400382667 /* test_roductDetailsViewController_shouldReturnExpectedSnapshot.1.png */,
+			);
+			path = ProductDetailsViewControllerTests;
+			sourceTree = "<group>";
+		};
+		C08F3A5A2C275E2B00382667 /* SearchResultControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C08F3A582C275E2B00382667 /* test_searchResultController_shouldReturnExpectedSnapshot.1.png */,
+				C08F3A592C275E2B00382667 /* test_searchResultController_whenEmptyState_shouldReturnExpectedSnapshot.1.png */,
+			);
+			path = SearchResultControllerTests;
+			sourceTree = "<group>";
+		};
+		C08F3A5C2C275E2B00382667 /* SearchViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				C08F3A5B2C275E2B00382667 /* test_searchViewController_shouldReturnExpectedSnapshot.1.png */,
+			);
+			path = SearchViewTests;
+			sourceTree = "<group>";
+		};
+		C08F3A5D2C275E2B00382667 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				C08F3A572C275E2B00382667 /* ProductDetailsViewControllerTests */,
+				C08F3A5A2C275E2B00382667 /* SearchResultControllerTests */,
+				C08F3A5C2C275E2B00382667 /* SearchViewTests */,
+			);
+			path = __Snapshots__;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -584,6 +628,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08F3A602C275E2B00382667 /* test_searchResultController_whenEmptyState_shouldReturnExpectedSnapshot.1.png in Resources */,
+				C08F3A5F2C275E2B00382667 /* test_searchResultController_shouldReturnExpectedSnapshot.1.png in Resources */,
+				C08F3A632C275E6500382667 /* test_roductDetailsViewController_shouldReturnExpectedSnapshot.1.png in Resources */,
+				C08F3A612C275E2B00382667 /* test_searchViewController_shouldReturnExpectedSnapshot.1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -118,6 +118,19 @@ final class ProductDetailsView: MLView {
         backgroundColor: .lightGray.withAlphaComponent(0.1),
         onTap: weakify { $0.openSafariFrom() }
     )
+
+    private lazy var separatorView = UIView() .. {
+        $0.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.heightAnchor(2)
+    }
+
+    private lazy var bottomSeparatorView = UIView() .. {
+        $0.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.heightAnchor(2)
+    }
+
 }
 
 // MARK: - Extension View code contract
@@ -139,6 +152,8 @@ extension ProductDetailsView: ViewCodeContract {
         contentView.addSubview(descriptionTitleLabel)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(moreInfoButton)
+        contentView.addSubview(separatorView)
+        contentView.addSubview(bottomSeparatorView)
     }
 
     func setupConstraints() {
@@ -206,7 +221,7 @@ extension ProductDetailsView: ViewCodeContract {
             .heightAnchor(20)
 
         buyButton
-            .topAnchor(in: freeShippingBadge, attribute: .bottom, padding: 30)
+            .topAnchor(in: freeShippingBadge, attribute: .bottom, padding: 20)
             .leftAnchor(in: contentView, padding: 15)
             .rightAnchor(in: contentView, padding: 15)
             .heightAnchor(50)
@@ -217,8 +232,13 @@ extension ProductDetailsView: ViewCodeContract {
             .rightAnchor(in: contentView, padding: 15)
             .heightAnchor(50)
 
-        descriptionTitleLabel
+        separatorView
             .topAnchor(in: addToCartButton, attribute: .bottom, padding: 30)
+            .leftAnchor(in: contentView)
+            .rightAnchor(in: contentView)
+
+        descriptionTitleLabel
+            .topAnchor(in: separatorView, attribute: .bottom, padding: 30)
             .leftAnchor(in: contentView, padding: 15)
             .rightAnchor(in: contentView, padding: 15)
             .heightAnchor(20)
@@ -233,6 +253,11 @@ extension ProductDetailsView: ViewCodeContract {
             .leftAnchor(in: contentView, padding: 15)
             .rightAnchor(in: contentView, padding: 15)
             .heightAnchor(50)
+
+        bottomSeparatorView
+            .topAnchor(in: moreInfoButton, attribute: .bottom, padding: 30)
+            .leftAnchor(in: contentView)
+            .rightAnchor(in: contentView)
             .bottomAnchor(in: contentView, padding: 100)
     }
 

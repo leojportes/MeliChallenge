@@ -18,7 +18,7 @@ class ProductDetailsViewControllerTests: XCTestCase {
         assertSnapshot(
             of: sut,
             as: .image(size: .init(width: 370, height: 1300)),
-            record: false
+            record: true
         )
     }
 }
