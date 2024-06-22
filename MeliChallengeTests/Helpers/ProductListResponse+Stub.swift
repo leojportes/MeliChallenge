@@ -72,10 +72,6 @@ extension Product {
             title: title,
             price: price,
             currencyId: currencyId,
-            availableQuantity: availableQuantity,
-            buyingMode: buyingMode,
-            listingTypeId: listingTypeId,
-            stopTime: stopTime,
             condition: condition,
             permalink: permalink,
             thumbnailId: thumbnailId,
@@ -87,9 +83,7 @@ extension Product {
             originalPrice: originalPrice,
             categoryId: categoryId,
             officialStoreId: officialStoreId,
-            officialStoreName: officialStoreName,
-            catalogProductId: catalogProductId,
-            catalogListing: catalogListing
+            officialStoreName: officialStoreName
         )
     }
 }

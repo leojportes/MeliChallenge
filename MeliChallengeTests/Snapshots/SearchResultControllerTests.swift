@@ -23,6 +23,13 @@ class SearchResultControllerTests: XCTestCase {
         sut.rootView.numberOfResults = 1345
         assertSnapshot(of: sut, as: .image, record: false)
     }
+
+    func test_searchResultController_whenEmptyState_shouldReturnExpectedSnapshot() {
+        let sut = makeSut()
+        sut.rootView.products = []
+        sut.rootView.numberOfResults = 0
+        assertSnapshot(of: sut, as: .image, record: false)
+    }
 }
 
 extension SearchResultControllerTests {

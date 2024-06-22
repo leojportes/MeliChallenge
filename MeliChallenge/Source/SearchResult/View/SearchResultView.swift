@@ -19,6 +19,7 @@ final class SearchResultView: MLView {
             spinningCircleView.isHidden = true
             tableView.isHidden = products.count == 0
             tableView.reloadData()
+            emptyView.isHidden = products.count > 0
         }
     }
 

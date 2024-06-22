@@ -10,7 +10,7 @@ import UIKit
 final class ProductDetailsViewController: CoordinatedViewController {
     private let product: Product
     private let viewModel: ProductDetailsViewModel
-    private lazy var rootView = ProductDetailsView(
+    private(set) lazy var rootView = ProductDetailsView(
         product: product,
         openSafariFrom: weakify { $0.viewModel.openSafariFrom(url: $0.product.permalink) }
     )

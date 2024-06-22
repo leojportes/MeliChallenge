@@ -67,7 +67,6 @@ final class SearchResultController: CoordinatedViewController {
                 self?.rootView.numberOfResults = result.paging.total
                 self?.rootView.fetchMore = false
                 self?.currentPage += 10
-                self?.rootView.emptyView.isHidden = self?.rootView.products.count ?? 0 > 0
                 return
             }
         }

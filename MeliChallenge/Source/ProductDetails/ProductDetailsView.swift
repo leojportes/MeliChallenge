@@ -54,7 +54,7 @@ final class ProductDetailsView: MLView {
         $0.isHidden = true
     }
 
-    private lazy var productImageView = UIImageView() .. {
+    private(set) lazy var productImageView = UIImageView() .. {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "no-image")
