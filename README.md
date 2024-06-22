@@ -141,6 +141,10 @@ Coordinator: Gerencia a navegação entre diferentes telas (ViewControllers). El
 
 # Dependências
 
+- Desenvolvido no Xcode 15.3
+- Versão mínima de compilação: iOS 15.0
+
+
 - SnapshotTesting:
 
 É uma técnica de teste que captura uma "foto" do estado da interface ou dos dados do aplicativo e a compara com uma versão de referência previamente salva.
@@ -172,6 +176,3 @@ extension DummyViewControllerTests {
 }
 
 ```
-
-
-
