@@ -65,10 +65,10 @@ MVVM-C é um padrão arquitetural que combina o Model-View-ViewModel (MVVM) com 
 
 Componentes do MVVM-C:
 
-Model: Representa os dados e a lógica de negócios da aplicação.
+- Model: Representa os dados e a lógica de negócios da aplicação.
 
-View: Responsável pela apresentação visual e pela interação com o usuário. Deve ser passiva, reagindo apenas às mudanças no ViewModel.
+- View: Responsável pela apresentação visual e pela interação com o usuário. Deve ser passiva, reagindo apenas às mudanças no ViewModel.
 
-ViewModel: Contém a lógica de apresentação, interage com o Model e fornece dados formatados para a View. É responsável por processar a entrada do usuário.
+- ViewModel: Contém a lógica de apresentação, interage com o Model e fornece dados formatados para a View. É responsável por processar a entrada do usuário.
 
-Coordinator: Gerencia a navegação entre diferentes telas (ViewControllers). Ele cria ViewModels e ViewControllers e define como eles interagem.
+- Coordinator: Gerencia a navegação entre diferentes telas (ViewControllers). Ele cria ViewModels e ViewControllers e define como eles interagem.
