@@ -1,4 +1,5 @@
-
+# MeLi Challenge
+- Aplicativo que possibilita a consulta de produtos anunciados no [Mercado Livre](https://www.mercadolivre.com.br) e a visualização dos detalhes de cada produto.
 
 # Evidências
 
