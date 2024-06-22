@@ -138,3 +138,39 @@ ViewModel: Contém a lógica de apresentação, interage com o Model e fornece d
 Coordinator: Gerencia a navegação entre diferentes telas (ViewControllers). Ele cria ViewModels e ViewControllers e define como eles interagem.
 
 
+# Dependências
+
+- SnapshotTesting:
+
+É uma técnica de teste que captura uma "foto" do estado da interface ou dos dados do aplicativo e a compara com uma versão de referência previamente salva.
+Essa técnica é amplamente utilizada para verificar se mudanças no código não introduziram regressões visuais ou de dados.
+
+- Exemplo:
+
+```swift
+import SnapshotTesting
+import XCTest
+
+@testable import MeliChallenge
+
+class DummyViewControllerTests: XCTestCase {
+    func test_dummyViewController_shouldReturnExpectedSnapshot() {
+        let sut = makeSut()
+        assertSnapshot(
+            of: sut,
+            as: .image,
+            record: true
+        )
+    }
+}
+
+extension DummyViewControllerTests {
+    func makeSut() -> DummyViewController {
+        DummyViewController()
+    }
+}
+
+```
+
+
+
