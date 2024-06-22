@@ -21,7 +21,7 @@
 
 
 <details>
-   <summary>Resultado de pesquisa</summary>
+   <summary>Detalhes do produto</summary>
     
   <img width="300" src="https://github.com/leojportes/MeliChallenge/assets/65302846/e93133a2-bd31-4158-964a-99d5bbde63ff">
       
