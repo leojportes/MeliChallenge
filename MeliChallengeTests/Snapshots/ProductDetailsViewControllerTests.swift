@@ -15,7 +15,11 @@ class ProductDetailsViewControllerTests: XCTestCase {
         let sut = makeSut()
         sut.rootView.setupDescription(mockDescription)
 
-        assertSnapshot(of: sut, as: .image, record: false)
+        assertSnapshot(
+            of: sut,
+            as: .image(size: .init(width: 370, height: 1300)),
+            record: false
+        )
     }
 }
 
