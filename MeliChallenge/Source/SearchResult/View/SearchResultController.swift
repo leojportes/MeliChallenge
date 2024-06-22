@@ -110,6 +110,7 @@ extension SearchResultController: UITextFieldDelegate {
             rootView.tableView.reloadData()
             rootView.spinningCircleView.animate()
             rootView.spinningCircleView.isHidden = false
+            rootView.emptyView.isHidden = true
             fetchProductList(newSearchText, isFirstPage: false)
         }
         return true
