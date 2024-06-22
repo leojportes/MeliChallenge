@@ -9,10 +9,15 @@ import UIKit
 
 final class ProductDetailsViewController: CoordinatedViewController {
     private let product: Product
-    private lazy var rootView = ProductDetailsView(product: product)
+    private let viewModel: ProductDetailsViewModel
+    private lazy var rootView = ProductDetailsView(
+        product: product,
+        openSafariFrom: weakify { $0.viewModel.openSafariFrom(url: $0.product.permalink) }
+    )
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchDetails()
     }
 
     override func loadView() {
@@ -20,7 +25,8 @@ final class ProductDetailsViewController: CoordinatedViewController {
         view = rootView
     }
 
-    init(product: Product, coordinator: CoordinatorProtocol) {
+    init(product: Product, viewModel: ProductDetailsViewModel, coordinator: CoordinatorProtocol) {
+        self.viewModel = viewModel
         self.product = product
         super.init(coordinator: coordinator)
     }
@@ -32,5 +38,23 @@ final class ProductDetailsViewController: CoordinatedViewController {
 
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Private methods
+    private func fetchDetails() {
+        viewModel.fetchProductDetails(id: product.id) { result in
+            switch result {
+            case .success(let detail):
+                DispatchQueue.main.async { [weak self] in
+                    self?.rootView.setupDescription(detail.plainText)
+                }
+            case .error:
+                DispatchQueue.main.async { [weak self] in
+                    self?.showAlert() {
+                        self?.viewModel.dismiss()
+                    }
+                }
+            }
+        }
     }
 }

@@ -29,7 +29,7 @@ class Endpoint {
     init(
         path: String,
         method: HTTPMethod = .get,
-        query: [URLQueryItem]
+        query: [URLQueryItem] = []
     ) {
         self.path = path
         self.query = query

@@ -27,10 +27,6 @@ struct Product: Codable, Equatable {
     let title: String
     let price: Double
     let currencyId: String
-    let availableQuantity: Int?
-    let buyingMode: String
-    let listingTypeId: String
-    let stopTime: String
     let condition: String
     let permalink: String
     let thumbnailId: String?
@@ -43,8 +39,6 @@ struct Product: Codable, Equatable {
     let categoryId: String?
     let officialStoreId: Int?
     let officialStoreName: String?
-    let catalogProductId: String?
-    let catalogListing: Bool?
 
     var hasOfficialStore: Bool {
         officialStoreId != nil
@@ -67,11 +61,15 @@ struct Product: Codable, Equatable {
 
     var installmentText: String {
         let value = String.formattedCurrency(for: installments?.amount, currencyCode: installments?.currencyId)
-        let rate = installments?.rate == nil ? "" : "sem juros"
+        let rate = hasInstallmentRate ? "" : "sem juros"
         if let installmentQuantity = installments?.quantity {
             return "em \(installmentQuantity)x \(value ?? "") \(rate)"
         }
         return ""
+    }
+
+    var hasInstallmentRate: Bool {
+        installments?.rate != 0
     }
 
     var imageUrl: String {
@@ -80,6 +78,12 @@ struct Product: Codable, Equatable {
         } else {
             return thumbnail
         }
+    }
+
+    var conditionDescription: String {
+        condition == "new"
+            ? "Novo"
+            : "Usado"
     }
 }
 
