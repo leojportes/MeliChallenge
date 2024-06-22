@@ -1,5 +1,7 @@
 # MeLi Challenge
 - Aplicativo que possibilita a consulta de produtos anunciados no [Mercado Livre](https://www.mercadolivre.com.br) e a visualização dos detalhes de cada produto.
+- Desenvolvido no Xcode 15.3
+- Versão mínima de compilação: iOS 15.0
 
 # Evidências
 
@@ -140,9 +142,6 @@ Coordinator: Gerencia a navegação entre diferentes telas (ViewControllers). El
 
 
 # Dependências
-
-- Desenvolvido no Xcode 15.3
-- Versão mínima de compilação: iOS 15.0
 
 
 - SnapshotTesting:
