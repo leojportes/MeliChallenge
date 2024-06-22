@@ -1,3 +1,6 @@
+
+* 📚 [Documentação](./Docs/Architecture.md)
+
 <details>
     <summary>Home</summary>
   
